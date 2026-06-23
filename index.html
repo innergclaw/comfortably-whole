@@ -232,22 +232,33 @@
         position: absolute;
         top: -18px;
         right: -18px;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         width: 112px;
         height: 112px;
-        place-items: center;
+        align-items: center;
+        justify-content: center;
         border-radius: 50%;
         background: var(--mustard);
         color: #251b10;
         box-shadow: 0 16px 34px rgba(33, 27, 24, 0.18);
         font-weight: 900;
         text-align: center;
+        line-height: 1;
       }
 
-      .price-badge span {
+      .price-badge .price-label {
         display: block;
-        font-size: 1.9rem;
-        line-height: 1;
+        margin-bottom: 4px;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .price-badge .price-value {
+        display: block;
+        font-size: 2.45rem;
+        letter-spacing: 0;
       }
 
       section {
@@ -649,11 +660,15 @@
           right: 8px;
           width: 90px;
           height: 90px;
-          font-size: 0.85rem;
         }
 
-        .price-badge span {
-          font-size: 1.5rem;
+        .price-badge .price-label {
+          margin-bottom: 3px;
+          font-size: 0.62rem;
+        }
+
+        .price-badge .price-value {
+          font-size: 2rem;
         }
 
         .mock-page:nth-child(2) {
@@ -701,7 +716,7 @@
               <span>13 craveable meals, brunch plates, and dessert bites</span>
             </div>
           </div>
-          <div class="price-badge">Only<span>$19</span></div>
+          <div class="price-badge"><span class="price-label">Only</span><span class="price-value">$19</span></div>
         </div>
       </header>
 
